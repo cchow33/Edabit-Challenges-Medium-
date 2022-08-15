@@ -1,0 +1,31 @@
+// INSTRUCTIONS:
+Create a function which returns the number of true values there are in an array.
+
+
+// Solution 1
+function countTrue(arr){
+ return arr.filter(x => x === true).length
+}
+
+
+// Solution 2
+function countTrue(arr) {
+  if (arr.length == 0) return 0;
+	let sum = 0;
+	for (const i in arr) {
+		 sum += (arr[i] == true) ? 1 : 0;
+	}
+	return sum;
+}
+
+// Solution 4
+function countTrue(arr){
+  let count = 0;
+  arr.filter(x => {
+		if (x === true) {
+		  count++
+		}
+   })
+
+  return count;
+}
