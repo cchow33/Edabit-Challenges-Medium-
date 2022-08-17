@@ -1,6 +1,9 @@
-// Given three arguments ⁠— an object obj of the stolen items, the pets name and a value ⁠— return an object with that name and value in it (as key-value pairs).
+// You just returned home to find your mansion has been robbed! Given an object of the stolen items, return the total amount of the burglary (number). If nothing was robbed, return the string "Lucky you!".
 
-function addName(obj, name, value) {
-	obj[name] = value;
-	return obj;
-};
+function calculateLosses(obj) {
+	let sum = 0;
+	for(let ele in obj){
+		sum += obj[ele];
+	}
+	return sum > 0 ? sum : 'Lucky you!';
+}
