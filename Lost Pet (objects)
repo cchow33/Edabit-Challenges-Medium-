@@ -1,0 +1,22 @@
+// Given an object of the stolen items and a string in lowercase representing the name of the pet (e.g. "rambo"), return:
+// "Rambo is gone..." if the name is on the list.
+// "Rambo is here!" if the name is not on the list.
+
+
+// SOLUTION #1 (Using .includes)
+function findIt(obj, name) {
+	return Object.keys(obj).includes(name) ? `${name[0].toUpperCase() + name.slice(1)} is gone...` : `${name[0].toUpperCase() + name.slice(1)} is here!`
+}
+
+// SOLUTION #2: (Using 'in' operator)	
+function findIt(obj, name)  {
+	const displayName = name[0].toUpperCase() + name.slice(1);
+	return `${displayName} is ${(name in obj) ? 'gone...' : 'here!'}`;
+};
+
+
+// SOLUTION #2: As an arrow function
+const findIt = (obj, name) => {
+	const displayName = name[0].toUpperCase() + name.slice(1);
+	return `${displayName} is ${(name in obj) ? 'gone...' : 'here!'}`;
+};

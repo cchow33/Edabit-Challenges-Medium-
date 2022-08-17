@@ -1,7 +1,0 @@
-// Given an object of the stolen items and a string in lowercase representing the name of the pet (e.g. "rambo"), return:
-// "Rambo is gone..." if the name is on the list.
-// "Rambo is here!" if the name is not on the list.
-
-function findIt(obj, name) {
-	return Object.keys(obj).includes(name) ? `${name[0].toUpperCase() + name.slice(1)} is gone...` : `${name[0].toUpperCase() + name.slice(1)} is here!`
-}
