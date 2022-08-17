@@ -8,14 +8,21 @@ function findIt(obj, name) {
 	return Object.keys(obj).includes(name) ? `${name[0].toUpperCase() + name.slice(1)} is gone...` : `${name[0].toUpperCase() + name.slice(1)} is here!`
 }
 
-// SOLUTION #2: (Using 'in' operator)	
+// SOLUTION #2 (Using .includes)
+function findIt(obj, name) {
+	let x = name[0].toUpperCase() + name.slice(1);
+	return Object.keys(obj).includes(name)? `${x} is gone...`: `${x} is here!`;
+}
+
+
+// SOLUTION #3: (Using 'in' operator)	
 function findIt(obj, name)  {
 	const displayName = name[0].toUpperCase() + name.slice(1);
 	return `${displayName} is ${(name in obj) ? 'gone...' : 'here!'}`;
 };
 
 
-// SOLUTION #2: As an arrow function
+// SOLUTION #3: As an arrow function
 const findIt = (obj, name) => {
 	const displayName = name[0].toUpperCase() + name.slice(1);
 	return `${displayName} is ${(name in obj) ? 'gone...' : 'here!'}`;
