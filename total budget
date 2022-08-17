@@ -1,10 +1,23 @@
 // Create the function that takes an array with objects 
 // and returns the sum of people's budgets.
 
+
+// SOLUTION 1: (Using for ...in)
 function getBudgets(obj) {
   let sum = 0;
   for (const x in obj) {
     sum += obj[x].budget
+  }
+  return sum;
+}
+
+
+// SOLUTION 2: (Using for ... )
+function getBudgets(obj){
+  let sum = 0;
+
+  for (let i = 0; i < obj.length; i++) {
+    sum += obj[i].budget;
   }
   return sum;
 }
