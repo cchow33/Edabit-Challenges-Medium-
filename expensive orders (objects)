@@ -1,0 +1,24 @@
+// Write a function that has two parameters: orders and cost. Return any orders that are greater than the cost.
+
+// SOLUTION #1: (Using 'for...in loop')
+function expensiveOrders(orders, cost) {
+	let object = {}
+      
+      for(let i in orders){
+        if(orders[i] > cost){
+          object[i] = orders[i];
+        }
+      }
+      
+      return object;
+}
+
+// SOLUTION #2: (Using the 'delete' operator)
+
+function expensiveOrders(orders, cost) {
+	Object.keys(orders).forEach(i => {
+		if(orders[i] < cost) delete orders[i]
+	});
+	
+	return orders;
+}
