@@ -1,0 +1,35 @@
+// The insurance guy calls, the policy you chose doesn't cover values below 5000€, it wouldn't dignify your status you said at the time. Given an object with a list of the stolen items, return a copy of that list without the values below 5000.
+
+
+// SOLUTION #1: (Using spread operator)
+function filterValues(obj) {
+	const copy = { ...obj };
+  for (item in copy) {
+    if (copy[item] < 5000) delete copy[item];
+  }
+  return copy;
+}
+
+// SOLUTION #2:  (Using for ... in loop)
+const filterValues = obj => {
+	const copy = {};
+	for(let x in obj) {
+		if(obj[x] >= 5000) { 
+      copy[x] = obj[x]
+      }
+	}
+	return copy;
+}
+
+// SOLUTION #3: (Using forEach OR .map)
+function filterValues(obj) {
+	const copy = {}
+	Object.keys(obj).forEach(x => {
+		if (obj[x] >= 5000) {
+			copy[x] = obj[x]
+		}
+	})
+	return copy;
+}
+
+console.log({ tv: 4999, guitar:5000, fork: 5001 }) // { guitar:5000, fork: 5001 };
